@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Front page</title>
+
+      <style>
+         body {
+            background-color: #ff66b2; /* Pink background */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* Optional: change font family */
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            text-align: center;
+        }
+         
+        /* Box styling to add some spacing and structure */
+        .box {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 320px; /* You can adjust this width if necessary */
+            justify-content: center;
+            height: 250px;
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            gap: 2.5rem;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            grid-template-rows: 1fr 1fr;
+            align-items: center;
+            margin-left: 100px;
+        }
+
+        #container {
+            height: 400px;
+            display: grid;
+            gap: 1px;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            margin-left: 220px;
+        }
+
+        /* Heading styles */
+        .heading h1 {
+            color: white; /* White color for heading */
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            color: white; /* White color for paragraph */
+            font-size: 18px;
+        }
+
+        /* Video box styles */
+        .video video {
+            width: 100%; /* Make the video responsive */
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        /* Message box styles */
+        .message h2 {
+            color: #ff66b2; /* Pink color for the message */
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .message img {
+            width: 130px; /* Adjust the size of the envelope image */
+            height: 130px;
+            transition: transform 0.3s ease;
+        }
+
+        .message img:hover {
+            transform: scale(1.1); /* Hover effect for the envelope */
+        }
+
+        .footer {
+            font-size: large;
+            font-weight: 500px;
+            text-align: center;
+            margin-left: 20px;
+        }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 680px) {
+            /* Adjust the grid layout */
+            .container {
+                grid-template-columns: 1fr; /* Stack items vertically */
+                margin-left: 0;
+                gap: 1.5rem; /* Add spacing between items */
+            }
+
+            #container {
+                margin-left: 0; /* Remove left margin */
+                gap: 1rem; /* Reduce gap between boxes */
+                grid-template-columns: 1fr; /* Stack items vertically */
+            }
+
+            .box {
+                width: 100%; /* Make boxes take full width */
+                height: auto; /* Adjust height */
+                padding: 10px; /* Reduce padding */
+            }
+
+            .heading h1 {
+                font-size: 28px; /* Reduce font size of heading */
+            }
+
+            .heading p {
+                font-size: 16px; /* Reduce font size of paragraph */
+            }
+
+            .video video {
+                height: 150px; /* Make video smaller */
+            }
+
+            .message h2 {
+                font-size: 20px; /* Reduce font size for message titles */
+            }
+
+            .message img {
+                width: 100px; /* Make images smaller */
+                height: 100px;
+            }
+
+            .footer {
+                font-size: medium; /* Reduce font size for footer */
+                margin-left: 10px; /* Adjust footer margin */
+            }
+        }
+      </style>
+
+  </head>
+
+  <body>
+    <div id="Front-page">
+
+        <div class="logo"> <img src="./assets/images/LOVE STRUCK.gif" alt="Love arrow" height="200px">  <br/> FOLLOW THE NUMBERS  </div>
+        <!-- Heading Section -->
+         <div id="container">
+            <div class="box heading">
+                <h1>HEY YOU❤️</h1>
+                <p>1: <br/> Let's call this "A JOURNEY",something I want to do with you but First, watch where it all started😌 <br/> (Watch the video)</p>
+            </div>
+
+            <!-- Video Section -->
+            <div class="box video">
+                <video width="320" height="240" controls> 2:
+                    <source src="./assets/Video/1108.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <hr/>
+        <div class="container">
+            <!-- Message Section -->
+            <div class="box message">
+                <h2>3: <br/> Letter To YOU📩</h2>
+                <a href="./letter.html">
+                    <img src="./assets/images/Cute Letter Valentine Flat PNG & SVG Design For T-Shirts.jpeg" alt="Love message" />
+                </a>
+            </div>
+
+            <div class="box message">
+                <h2>4: <br/>YOU My Love❤️📩</h2>
+                <a href="./Homepage.html">
+                    <img src="./assets/images/Envelope.gif" alt="Love message" />
+                </a>
+            </div>
+
+            <div class="box message">
+                <h2>5: <br/> THE QUESTION❤️</h2>
+                <a href="./question.html">
+                    <img src="./assets/images/Ring.jpeg" alt="Love message" />
+                </a>
+            </div>
+        </div>
+
+        <div class="footer"><P>This is just a little out of many, and a testament that I am in love with you, You are the motivation and my muse to creating this website. I hope you like it xx</P>
+        <footer>Yours and Always™️</footer>
+    </div>
+
+    </div>
+     
+  </body>
+</html>
