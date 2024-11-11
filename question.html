@@ -1,38 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agency</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Question?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="tomi1.js"></script>
+
+    <style>
+        /* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General body styling */
+*{
+  color: #f8d7da;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ff66b2;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  color: #f8d7da;
+}
+
+/* Container for all content */
+.container {
+  text-align: center;
+  background: #000000;
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+/* Title styling */
+.title {
+  font-size: 36px;
+  color: #FF66B2;
+  margin-bottom: 20px;
+}
+
+/* Heart animation */
+.heart-container {
+  margin-top: 30px;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background-color: #FF66B2;
+  clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 75%, 20% 100%, 0% 35%);
+  animation: heart-beat 1.5s infinite;
+  display: inline-block;
+  margin: 10px auto;
+}
+
+@keyframes heart-beat {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Message and question styling */
+.message {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #f8d7da;
+}
+
+.question-box {
+  margin-top: 20px;
+}
+
+.question {
+  font-size: 26px;
+  color: #f8d7da;
+  margin-bottom: 20px;
+}
+
+.answer-button {
+  background-color: #FF66B2;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.answer-button:hover {
+  transform: scale(1.05);
+}
+
+.answer-button:active {
+  transform: scale(0.95);
+}
+
+/* Style for Yes button */
+.answer-button:first-child {
+  background-color: #4CAF50; /* Green for Yes */
+}
+
+.answer-button:last-child {
+  background-color: #FF5733; /* Red for No */
+}
+
+/* Dynamic background change */
+.body-positive {
+  background-color: #d4f1d4; /* Light green for Yes */
+}
+
+.body-negative {
+  background-color: #f8d7da; /* Light red for No */
+}
+
+    </style>
 </head>
-
 <body>
-  <div class="main">
-    <img class="logo" src="./assets/images/logo.png" alt="logo">
-     <h1>We are a <span class="creative">Creative</span> <br /> Design Agency</h1>
-    <div class="left card"><img class="tile-image" src="./assets/images/beautiful.jpg" alt="hand and flower in water">
-      <h2 class="card-title">Beauty</h2>
-      <p class="card-text">We strive to create the most beautiful websites for all your needs. Working closely with you
-        to
-        design and
-        develop an amazing website for your business.</p>
-    </div>
+    <div class="container">
+        <h1 class="title">Miss Olanrewaju</h1>
+        <p class="message">  You light up my world in ways I never thought possible. Your kindness, beauty, and quirks make me feel like I've found my Person. Instead of asking you to be my girlfriend, I want to ask you to join me on an adventure of laughter, exploration, and love. 
 
-    <div class="right card"><img class="tile-image" src="./assets/images/construction.jpg" alt="metal structure">
-      <h2 class="card-title">Construction</h2>
-      <p>Built by our team of professional developers, we ensure the most rigourous and modern websites. Built from
-        scratch using HTML and CSS. Only the best for you.</p>
-    </div>
+        </p>
+        "So I've got something special to ask you...</p>
+        
+        <div class="question-box">
+            <p class="question">Will you Olanrewaju Tomiyosi be my bestfriend,my partner in  crime,my better half,and my girlfriend?</p>
+            <button class="answer-button" onclick="changeBackground()">Yes, I will!</button>
+            <button class="answer-button" onclick="changeBackground(false)">No, not yet.</button>
+        </div>
+        
+        <div class="heart-container">
+            <div class="heart"></div>
+        </div>
 
-  </div>
-  <footer>
-    <p>Create. Develop. Design.</p>
-  </footer>
+    </div>
+    
+     <script>
+        // Function to change the background color based on the response
+function changeBackground(response = true) {
+    // Store the response in localStorage (Yes = true, No = false)
+    localStorage.setItem('userResponse', response ? 'Yes' : 'No');
+
+    if (response) {
+        // Change the background to light green when the answer is "Yes"
+        document.body.classList.add('body-positive');
+        document.body.classList.remove('body-negative');
+    } else {
+        // Change the background to light red when the answer is "No"
+        document.body.classList.add('body-negative');
+        document.body.classList.remove('body-positive');
+    }
+
+    // Disable the buttons after a response
+    const buttons = document.querySelectorAll('.answer-button');
+    buttons.forEach(button => {
+        button.disabled = true;
+        button.style.cursor = 'not-allowed';
+    });
+
+    // Optionally, change the question text after the response
+    const question = document.querySelector('.question');
+    if (response) {
+        question.innerHTML = "Thank You for making me the happiest man alive! I have a DATE to plan💖";
+    } else {
+        question.innerHTML = "No worries, take your time! 😌";
+    }
+}
+
+// Function to display the user's previous response on page load
+function displayPreviousResponse() {
+    const savedResponse = localStorage.getItem('userResponse');
+    const question = document.querySelector('.question');
+
+    if (savedResponse) {
+        // If there's a saved response, update the background and question
+        if (savedResponse === 'Yes') {
+            document.body.classList.add('body-positive');
+            document.body.classList.remove('body-negative');
+            question.innerHTML = "Thank You for making me the happiest man alive! I have a DATE to plan💖";
+        } else {
+            document.body.classList.add('body-negative');
+            document.body.classList.remove('body-positive');
+            question.innerHTML = "No worries, take your time! 😌";
+        }
+    }
+}
+
+// Call the display function when the page is loaded
+window.addEventListener('load', displayPreviousResponse);
+
+     </script>
+
 </body>
-
 </html>
